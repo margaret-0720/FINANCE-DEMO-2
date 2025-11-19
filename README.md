@@ -6,46 +6,46 @@
 학습용으로 제작한 프로젝트이며, 복잡한 금융 로직 대신 간단한 예시 데이터를 사용해 기능을 구현했습니다.
 웹 동작 방식과 테스트 설계를 연습하기 위해 만든 미니 프로젝트입니다.
 
-📁 프로젝트 구조
-finance-demo/
- ├── app.py
- └── templates/
-       └── index.html
+📁 프로젝트 구조<br>
+finance-demo/<br>
+ ├── app.py<br>
+ └── templates/<br>
+       └── index.html<br>
        
-app.py : Flask 서버 및 API 라우트 구현
+app.py : Flask 서버 및 API 라우트 구현<br>
 index.html : 탭 기반 UI (계좌조회 / 송금 / 입·출금 / 거래내역)
 
-🔧 개발 환경
-Python 3.13
-Flask 3.1.2
-HTML / CSS / jQuery
-macOS (VS Code)
+🔧 개발 환경<br>
+Python 3.13<br>
+Flask 3.1.2<br>
+HTML / CSS / jQuery<br>
+macOS (VS Code)<br>
 
 🎯 프로젝트 주요 기능
-1. 계좌조회 (/balance)
-계좌번호 입력 → 해당 계좌 잔액 반환
-존재하지 않는 계좌 처리 로직 포함
-2. 송금 (/transfer)
-출금 계좌 → 입금 계좌
-금액 검증(숫자 여부, 0 이하 금액, 잔액 부족)
-송금 성공 시 양쪽 계좌에 내역 기록
-3. 입금 (/deposit)
-계좌번호 + 금액 입력
-자동 날짜 기록
-거래내역에 반영
-4. 출금 (/withdraw)
-계좌번호 + 금액 입력
-잔액 부족 검증
-거래내역에 반영
-5. 거래내역 조회 (/transactions)
-모든 계좌의 거래내역 리스트 반환
-송금·입금·출금 기록 전체 확인 가능
+1. 계좌조회 (/balance)<br>
+계좌번호 입력 → 해당 계좌 잔액 반환<br>
+존재하지 않는 계좌 처리 로직 포함<br>
+2. 송금 (/transfer)<br>
+출금 계좌 → 입금 계좌<br>
+금액 검증(숫자 여부, 0 이하 금액, 잔액 부족)<br>
+송금 성공 시 양쪽 계좌에 내역 기록<br>
+3. 입금 (/deposit)<br>
+계좌번호 + 금액 입력<br>
+자동 날짜 기록<br>
+거래내역에 반영<br>
+4. 출금 (/withdraw)<br>
+계좌번호 + 금액 입력<br>
+잔액 부족 검증<br>
+거래내역에 반영<br>
+5. 거래내역 조회 (/transactions)<br>
+모든 계좌의 거래내역 리스트 반환<br>
+송금·입금·출금 기록 전체 확인 가능<br>
 
-🧪 테스트 케이스 설계 (총 30개)
-각 기능이 제대로 동작하는지 확인하기 위해 총 30개의 테스트 케이스를 작성했습니다.
-정상 흐름과 오류 상황을 모두 포함해 간단히 점검했습니다.
+🧪 테스트 케이스 설계 (총 30개)<br>
+각 기능이 제대로 동작하는지 확인하기 위해 총 30개의 테스트 케이스를 작성했습니다.<br>
+정상 흐름과 오류 상황을 모두 포함해 간단히 점검했습니다.<br>
 
-아래는 일부 예시입니다:
+아래는 일부 예시입니다:<br>
 | TC ID | 사전조건          | 입력값              | 예상결과             | 실제결과 | 중요도 |
 | ----- | ------------- | ---------------- | ---------------- | ---- | --- |
 | TC001 | 계좌 123-456 존재 | account=123-456  | 잔액 정상 출력         |      | 상   |
@@ -55,11 +55,11 @@ macOS (VS Code)
 | TC005 | 잔액 부족 상황      | amount > balance | 출금 실패 메시지        |      | 상   |
 | TC006 | 거래내역 존재       | 버튼 클릭            | YYYY-MM-DD 날짜 출력 |      | 중   |
 
-🚀 실행 방법
-저장소 클론
-git clone https://github.com/margaret-0720/FINANCE-DEMO-2.git
-cd finance-demo
-Flask 설치
+🚀 실행 방법<br>
+저장소 클론<br>
+git clone https://github.com/margaret-0720/FINANCE-DEMO-2.git<br>
+cd finance-demo<br>
+Flask 설치<br>
 pip install flask
 서버 실행
 python3 app.py
