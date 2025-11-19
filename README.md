@@ -56,15 +56,11 @@ macOS (VS Code)<br>
 | TC006 | 거래내역 존재       | 버튼 클릭            | YYYY-MM-DD 날짜 출력 |      | 중   |
 
 🚀 실행 방법<br>
-저장소 클론<br>
-git clone https://github.com/margaret-0720/FINANCE-DEMO-2.git<br>
+저장소 클론 | git clone https://github.com/margaret-0720/FINANCE-DEMO-2.git<br>
 cd finance-demo<br>
-Flask 설치<br>
-pip install flask<br>
-서버 실행<br>
-python3 app.py<br>
-브라우저 접속<br>
-http://127.0.0.1:5000<br>
+Flask 설치 | pip install flask<br>
+서버 실행 | python3 app.py<br>
+브라우저 접속 | http://127.0.0.1:5000<br>
 
 🔍 프로젝트를 통해 배운 점<br>
 웹 프로그램이 실제로 어떤 흐름으로 동작하는지 직접 화면을 구성하고 기능을 만들어보면서 이해할 수 있었습니다.<br>
