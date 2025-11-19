@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini Bank Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        body { font-family: sans-serif; margin: 30px; }
+        .tabs { display: flex; gap: 12px; margin-bottom: 20px; }
+        .tab { padding: 8px 16px; border: 1px solid #ccc; cursor: pointer; }
+        .tab.active { background: #333; color: #fff; }
+        .section { display: none; }
+        .section.active { display: block; }
+        .input-row { margin: 10px 0; }
+        .message { margin-top: 12px; white-space: pre-line; color: red; }
+    </style>
+</head>
+
+<body>
+
+    <h2>Mini-Bank Demo</h2>
+
+    <div class="tabs">
+        <div class="tab active" data-target="balance-sec">계좌조회</div>
+        <div class="tab" data-target="transfer-sec">송금</div>
+        <div class="tab" data-target="deposit-sec">입금</div>
+        <div class="tab" data-target="withdraw-sec">출금</div>
+        <div class="tab" data-target="history-sec">거래내역</div>
+    </div>
+
+    <!-- 계좌조회 -->
+    <div id="balance-sec" class="section active">
+        <div class="input-row">
+            계좌번호: <input id="balance-account">
+            <button id="balance-btn">조회</button>
+        </div>
+        <div id="balance-result" class="message"></div>
+    </div>
+
+    <!-- 송금 -->
+    <div id="transfer-sec" class="section">
+        <div class="input-row">출금 계좌: <input id="from-account"></div>
+        <div class="input-row">입금 계좌: <input id="to-account"></div>
+        <div class="input-row">금액: <input type="number" id="amount"></div>
+        <button id="transfer-btn">송금</button>
+        <div id="transfer-result" class="message"></div>
+    </div>
+
+    <!-- 입금 -->
+    <div id="deposit-sec" class="section">
+        <div class="input-row">계좌번호: <input id="dep-account"></div>
+        <div class="input-row">금액: <input id="dep-amount"></div>
+        <button id="dep-btn">입금</button>
+        <div id="dep-result" class="message"></div>
+    </div>
+
+    <!-- 출금 -->
+    <div id="withdraw-sec" class="section">
+        <div class="input-row">계좌번호: <input id="wd-account"></div>
+        <div class="input-row">금액: <input id="wd-amount"></div>
+        <button id="wd-btn">출금</button>
+        <div id="wd-result" class="message"></div>
+    </div>
+
+    <!-- 거래내역 -->
+    <div id="history-sec" class="section">
+        <button id="history-btn">내역 조회</button>
+        <div id="history-list" class="message"></div>
+    </div>
+
+
+    <script>
+        // 탭 전환
+        $(".tab").click(function(){
+            $(".tab").removeClass("active");
+            $(this).addClass("active");
+            $(".section").removeClass("active");
+            $("#" + $(this).data("target")).addClass("active");
+        });
+
+        // 계좌조회
+        $("#balance-btn").click(function(){
+            $.post("/balance", { account: $("#balance-account").val() }, function(res){
+                $("#balance-result").text(res.message);
+            });
+        });
+
+        // 송금
+        $("#transfer-btn").click(function(){
+            $.post("/transfer", {
+                from_acc: $("#from-account").val(),
+                to_acc: $("#to-account").val(),
+                amount: $("#amount").val()
+            }, function(res){
+                $("#transfer-result").text(res.message);
+            });
+        });
+
+        // 입금
+        $("#dep-btn").click(function(){
+            $.post("/deposit", {
+                account: $("#dep-account").val(),
+                amount: $("#dep-amount").val()
+            }, function(res){
+                $("#dep-result").text(res.message);
+            });
+        });
+
+        // 출금
+        $("#wd-btn").click(function(){
+            $.post("/withdraw", {
+                account: $("#wd-account").val(),
+                amount: $("#wd-amount").val()
+            }, function(res){
+                $("#wd-result").text(res.message);
+            });
+        });
+
+        // 거래내역
+        $("#history-btn").click(function(){
+            $.get("/transactions", function(res){
+                let html = "";
+                for (let t of res.list) {
+                    html += `[${t.date}] ${t.type} / ${t.amount}원 / 상대:${t.other}\n`;
+                }
+                $("#history-list").text(html);
+            });
+        });
+    </script>
+
+</body>
+</html>
