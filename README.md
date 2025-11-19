@@ -8,8 +8,11 @@
 
 📁 프로젝트 구조
 finance-demo/
+
  ├── app.py
+ 
  └── templates/
+ 
        └── index.html
        
 app.py : Flask 서버 및 API 라우트 구현
