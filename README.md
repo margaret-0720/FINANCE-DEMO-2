@@ -63,6 +63,11 @@ macOS (VS Code)<br>
 | TC-FI-21  | 거래내역 조회 | 거래내역 UI 정렬 확인       | 거래내역 화면                                     | 내역 항목 간 간격·정렬 정상 유지 | 거래내역 메뉴 → 내역 조회 버튼 클릭                                                      | 화면 내 항목 간 간격·정렬이 정상 유지됨                     | Pass  |
 | TC-FI-22  | 송금         | 미존재 계좌 오류 확인       | 출금 계좌: 123-456, 입금 계좌: 000-000, 금액 10,000 | 존재하지 않는 계좌 안내 메시지 | 송금 메뉴 → 출금 계좌번호 입력 → 입금 계좌번호 입력 → 금액 입력 → 송금 버튼 클릭         | ‘입금 계좌가 존재하지 않습니다.’ 메시지가 표시됨            | Pass  |
 
+💾전체 테스트케이스<br>
+전체 이커머스 테스트케이스는 구글시트에서 관리하고 있습니다.<br>
+아래 링크에서 전체 목록을 확인할 수 있습니다.<br>
+(https://docs.google.com/spreadsheets/d/1vK0YgExycDblnB7OjMR18_4V36hyBkk3nibW9KQ14MQ/)
+
 🚀 실행 방법<br>
 1. 저장소 클론<br>git clone https://github.com/margaret-0720/FINANCE-DEMO-2.git<br>
 cd finance-demo<br>
