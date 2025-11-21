@@ -7,11 +7,19 @@
 웹 동작 방식과 테스트 설계를 연습하기 위해 만든 미니 프로젝트입니다.<br>
 
 📁 프로젝트 구조<br>
-finance-demo/<br>
- ├── app.py<br>
- └── templates/<br>
-       └── index.html<br>
-       
+```plaintext
+finance-demo/
+├── app.py
+├── templates/
+│   └── index.html
+├── tests/
+│   ├── test_balance.py
+│   ├── test_deposit.py
+│   ├── test_history.py
+│   └── test_withdraw.py
+└── README.md
+```
+
 app.py : Flask 서버 및 API 라우트 구현<br>
 index.html : 탭 기반 UI (계좌조회 / 송금 / 입·출금 / 거래내역)<br>
 
