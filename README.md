@@ -1,4 +1,4 @@
-# FINANCE-DEMO-2
+# FINANCE-DEMO
 
 📌 Mini-Bank Demo (Flask 기반 금융 데모 웹)<br>
 이 프로젝트는 웹 애플리케이션의 기본 동작 원리와 소프트웨어 테스트에 대한 이해를 높이기 위해 Flask 프레임워크를 활용해 개발한 금융 서비스 데모 웹입니다.<br>
