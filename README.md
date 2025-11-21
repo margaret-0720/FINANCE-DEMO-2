@@ -66,7 +66,7 @@ macOS (VS Code)<br>
 💾전체 테스트케이스<br>
 전체 이커머스 테스트케이스는 구글시트에서 관리하고 있습니다.<br>
 아래 링크에서 전체 목록을 확인할 수 있습니다.<br>
-(https://docs.google.com/spreadsheets/d/1vK0YgExycDblnB7OjMR18_4V36hyBkk3nibW9KQ14MQ/)
+(https://docs.google.com/spreadsheets/d/1vK0YgExycDblnB7OjMR18_4V36hyBkk3nibW9KQ14MQ/))
 
 🚀 실행 방법<br>
 1. 저장소 클론<br>git clone https://github.com/margaret-0720/FINANCE-DEMO-2.git<br>
